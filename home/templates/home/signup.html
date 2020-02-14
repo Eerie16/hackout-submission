@@ -1,0 +1,194 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Rentafolio | Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- footer stylesheet -->
+    <link href="{% static 'home/css/footer3.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- Custom Theme files -->
+    <link href="{% static 'home/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- shop css -->
+    <link href="{% static 'home/css/shop.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'home/css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="{% static 'home/css/font-awesome.css' %}" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <!-- logo -->
+    <link href="//fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <!-- titles -->
+    <link href="//fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+    <!-- body -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="home">
+        <!-- header -->
+        {% block navbar %}{% include 'home/header.html' %}{% endblock navbar%}
+        <!-- //navbar ends here -->
+        <!-- banner -->
+        <div class="banner-bg-inner">
+            <!-- banner-text -->
+            <div class="banner-text-inner">
+                <div class="container">
+                    <h2 class="title-inner">
+                        world of reading
+                    </h2>
+
+                </div>
+            </div>
+            <!-- //banner-text -->
+        </div>
+        <!-- //banner -->
+        <!-- signin and signup form -->
+        <div class="login-form section text-center">
+            <div class="container">
+                <h4 class="rad-txt">
+                    <span class="abtxt1">Sign in</span>
+                    <span class="abtext">sign up</span>
+                </h4>
+                <div id="signupbox" style=" margin-top:50px" class="mainbox loginbox">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Sign Up</div>
+                        </div>
+                        <div class="panel-body">
+                            <form id="signupform" class="form-horizontal" action="" method="post">
+                                {% csrf_token %}
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Email</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-md-3 col-sm-3 col-xs-3 control-label">Username</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-9">
+                                            <input type="text" class="form-control" name="username" placeholder="Username" required="">
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">First Name</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="text" class="form-control" name="first_name" placeholder="First Name" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Last Name</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Password</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="password" class="form-control" name="password1" placeholder="Password" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Confirm Password</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="password" class="form-control" name="password2" placeholder="Password" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 col-sm-3 col-xs-3 control-label">Mobile Number</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <input type="tel" class="form-control" name="contact" placeholder="contact" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="signup-btn">
+                                        <button id="btn-signup" type="button" class="btn btn-info">
+                                            <i class="icon-hand-right"></i> &nbsp; Sign Up</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//signin and signup form ends here-->
+    {% block footer %}{% include 'home/footer3.html' %}{% endblock footer %}
+<!-- //home -->
+    <!-- js -->
+    <script src="{% static 'home/js/jquery-2.2.3.min.js' %}"></script>
+    <!-- //js -->
+    <!--search jQuery-->
+    <script src="{% static 'home/js/main.js' %}"></script>
+    <!--search jQuery-->
+    <script>
+        $(document).ready(function () {
+            $("#btn-signup").on('click',function(){
+               $("#signupform").submit();
+           });
+        });
+    </script>
+
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="{% static 'home/js/scrolling-nav.js' %}"></script>
+    <!-- //fixed-scroll-nav-js -->
+    <!-- start-smooth-scrolling -->
+    <script src="{% static 'home/js/move-top.js' %}"></script>
+    <script src="{% static 'home/js/easing.js' %}"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            $(".abtxt1").on('click',function(){
+                window.location.href = "{% url 'login' %}";
+
+            });
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+        });
+    </script>
+    <script src="{% static 'home/js/SmoothScroll.min.js' %}"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+ ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'home/js/bootstrap.js' %}"></script>
+</body>
+
+</html>

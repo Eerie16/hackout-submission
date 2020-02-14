@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zxx">
+{% load static %}
+<head>
+    <title>Rentafolio | Rent Read Return Repeat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="{% static 'home/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- footer stylesheet -->
+    <link href="{% static 'home/css/footer3.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- shop css -->
+    <link href="{% static 'home/css/shop.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'home/css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="{% static 'home/css/font-awesome.css' %}" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <!-- logo -->
+    <link href="//fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <!-- titles -->
+    <link href="//fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+    <!-- body -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    
+    <div id="home">
+        <!-- header -->
+        
+        {% block navbar %}{% include 'home/header.html' %}{% endblock navbar%}
+
+        <!-- banner -->
+        <div class="banner-bg-agileits">
+            <!-- banner-text -->
+            <div class="banner-text">
+                <div class="container">
+                    <p class="b-txt">the</p>
+                    <h2 class="title">
+                        Book Store
+                    </h2>
+                    <ul class="banner-txt">
+                        <li>rent.</li>
+                        <li> read. </li>
+                        <li>return.</li>
+                        <li>repeat.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //banner-text -->
+        </div>
+        <!-- //banner -->
+        <!-- about -->
+        <div class="about-sec section" id="about">
+            <div class="container">
+                <!-- about-left-grid -->
+                <div class="col-md-7 about-left-grid">
+                    <div class="inner-about2">
+                        <h4>Your free, cheap library</h4>
+                        <p>Massive collection with latest and the most popular books at mind blowing rates available for anywhere, anytime.</p>
+                        <h5>the library catalogue</h5>
+                        <ul class="about-list">
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>International Collections</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Manuscripts</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>scientific and Technical Information</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Comic Books</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Cartography</li>
+                            <li>
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>Journals</li>
+
+                        </ul>
+                    </div>
+                    <!-- about left bottom - services -->
+                    <div class="principles-grids principles-grids1">
+                        <div class="abt-btm agileits w3layouts aos-init aos-animate">
+                            <div class="col-md-6 col-sm-6 agileits elite-services1 w3layouts bottom-gds" data-aos="fade-up">
+                                <div class="bott-img agileits w3layouts">
+                                    <div class="icon-holder agileits w3layouts">
+                                        <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
+                                    </div>
+                                    <h4 class="mission agileits w3layouts">Recieve</h4>
+                                    <div class="description agileits w3layouts">
+                                        <a href="{% url 'catalog' %}">Rent</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 agileits elite-services2 w3layouts bottom-gds" data-aos="fade-down">
+                                <div class="bott-img bott-img1 agileits w3layouts">
+                                    <div class="icon-holder agileits w3layouts">
+                                        <span class="fa fa-book agileits w3layouts service-icon" aria-hidden="true"></span>
+                                    </div>
+                                    <h4 class="mission agileits w3layouts">Contribute</h4>
+                                    <div class="description agileits w3layouts">
+                                        <a href="{% url 'book_upload' %}">Upload</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- //about left bottom - services ends here -->
+                </div>
+                <!-- //about-left-grid ends here-->
+                <!-- about-right-grid -->
+                <div class="col-md-5 about-right-grid"></div>
+                <!-- //about-right-grid ends here -->
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- //about ends here -->
+            <!-- //about container ends here-->
+        </div>
+        <!--//about bottom ends here-->
+        <!-- team -->
+        <div id="team" class="team section">
+            <div class="team-container">
+                <div class="team-row">
+                    <!-- team grid1 -->
+                    <div class="col-md-5 team-grid-left">
+                        <!-- team individual grid -->
+                        
+                        <!-- //team individual grid -->
+                        <!-- team individual grid -->
+                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids" style="float: right;">
+                            <div class="team-text">
+                                <h4>K Gautham Sai</h4>
+                                <span>Experienced in Web Technologies</span>
+                                <p>Passionate about sports and programming</p>
+                            </div>
+                            <div class="team-effect">
+                                <img src="" alt="img" class="img-responsive">
+                                <div class="social-icon">
+                                    <a href="" class="social-button twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="" class="social-button facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="" class="social-button google">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- //team individual grid -->
+                        </div>
+                    </div>
+                    <!-- //team-grid1 ends here-->
+                    <!--team-grid2 -->
+                    <div class="col-md-2 col-sm-2 team-mid-txt text-center">
+                        <span>our</span>
+                        <h5>t</h5>
+                        <h5>e</h5>
+                        <h5>a</h5>
+                        <h5>m</h5>
+                    </div>
+                    <!--//team-grid2 ends here-->
+                    <!-- team grid3 -->
+                    <!-- team individual grid -->
+                    <div class="col-md-5 team-grid-right">
+                        <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                            <div class="team-text">
+                                <h4>Amritansh Singhal</h4>
+                                <span>Programmer, Computer Enthusiast</span>
+                                <p>Passionate about games and programming.</p>
+                            </div>
+                            <div class="team-effect">
+                                <img src="" alt="img" class="img-responsive">
+                                <div class="social-icon">
+                                    <a href="" class="social-button twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="" class="social-button facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="" class="social-button google">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //team individual grid -->
+                        <!-- team individual grid -->
+                        <!-- //team individual grid -->
+                        <div class="clearfix"> </div>
+                    </div>
+                    <!-- //team grid3 -->
+                    <div class="clearfix"> </div>
+                </div>
+                <!-- //team-row ends here -->
+            </div>
+            <!-- // team container ends here -->
+        </div>
+        <!-- //team -->
+        <!-- footer -->
+        {% block footer %}{% include 'home/footer3.html' %}{% endblock footer %}
+        <!-- //footer -->
+    </div>
+    <!-- //home -->
+    <!-- js -->
+    <script src="{% static 'home/js/jquery-2.2.3.min.js' %}"></script>
+    <!-- //js -->
+    <!--search jQuery-->
+    <script src="{% static 'home/js/main.js' %}"></script>
+    <!--search jQuery-->
+
+    <!-- //cart-js -->
+    <!-- Scrolling Nav JavaScript -->
+    <script src="{% static 'home/js/scrolling-nav.js' %}"></script>
+    <!-- //fixed-scroll-nav-js -->
+
+    <!-- //dropdown nav -->
+    <!-- start-smooth-scrolling -->
+    <script src="{% static 'home/js/move-top.js' %}"></script>
+    <script src="{% static 'home/js/easing.js' %}"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="{% static 'home/js/SmoothScroll.min.js' %}"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- about bottom grid Numscroller -->
+    <script src="{% static 'home/js/numscroller-1.0.js' %}"></script>
+    <!-- //about bottom grid Numscroller -->
+    <!-- Bootstrap core JavaScript
+ ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'home/js/bootstrap.js' %}"></script>
+</body>
+
+</html>

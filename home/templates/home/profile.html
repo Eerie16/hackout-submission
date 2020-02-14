@@ -1,0 +1,222 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% load static%}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Rentafolio | Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- footer stylesheet -->
+	<link href="{% static 'home/css/footer3.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- Custom Theme files -->
+    <link href="{% static 'home/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- shop css -->
+    <link href="{% static 'home/css/shop.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- checkout css -->
+    <link href="{% static 'home/css/checkout.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'home/css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="{% static 'home/css/font-awesome.css' %}" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <!-- logo -->
+    <link href="//fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <!-- titles -->
+    <link href="//fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+    <!-- body -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="home">
+        <!-- header -->
+        {% block navbar %}{% include 'home/header.html' %}{% endblock navbar%}
+        <!-- banner -->
+        <div class="banner-bg-inner">
+            <!-- banner-text -->
+            <div class="banner-text-inner">
+                <div class="container">
+                    <h2 class="title-inner">
+                        world of reading
+                    </h2>
+
+                </div>
+            </div>
+            <!-- //banner-text -->
+        </div>
+        <!-- //banner -->
+        <!--checkout-->
+        <div class="innerf-pages section">
+            <div class="container">
+                <div class="privacy about">
+                    <h4 class="rad-txt">
+                        <span class="abtxt1">Profile</span>
+                        <span class="abtext">Details</span>
+                    </h4>
+                    <div class="checkout-left">
+                            <div class="col-md-4 checkout-left-basket">
+                                <h4>Available Balance in Wallet &nbsp;&nbsp;&nbsp;<span>&#8377;{{user.profile.balance}}</span></h4>
+                                <ul>
+                                    <li>
+                                            <button class="submit check_out add-balance" id="balance_button">Add Balance</button>
+                                    </li>
+                                    <li>Currently issued books
+                                        <span>{{issued_books}}</span>
+                                    </li>
+                                    <li>Uploaded Books
+                                        <span>{{uploaded_books}} </span>
+                                    </li>
+                                </ul>
+                                <button class="submit check_out" id="issued_button">Issued Books</button>
+                                <button class="submit check_out" id="uploaded_button">Uploaded Books</button>
+                            </div>
+                            <div class="color-quality">
+                                <div class="color-quality-right">
+                                    <button class="submit check_out clickin" id="submit_button"> Upload Book </button>
+                                </div>
+                            </div>
+                    <div class="col-md-8 address_form">
+                            <h4>Your Details</h4>
+                            <form action="" method="post" class="creditly-card-form shopf-sear-headinfo_form" id="profile-form">
+                                {% csrf_token %}
+                                <div class="creditly-wrapper wrapper">
+                                    <div class="information-wrapper">
+                                        <div class="first-row form-group">
+                                            <div class="controls">
+                                                <label class="control-label">First name: </label>
+                                                <input class="billing-address-name form-control" type="text" name="first_name" placeholder="First name" value="{{user.first_name}}">
+                                            </div>
+                                            <div class="controls">
+                                                <label class="control-label">Last name: </label>
+                                                <input class="billing-address-name form-control" type="text" name="last_name" placeholder="Last name" value="{{user.last_name}}">
+                                            </div>
+                                            <div class="card_number_grids">
+                                                <div class="card_number_grid_left">
+                                                    <div class="controls">
+                                                        <label class="control-label">Mobile number:</label>
+                                                        <input class="form-control" type="tel" placeholder="Mobile number" name="contact" value="{{user.profile.contact}}">
+                                                    </div>
+                                                </div>
+                                                <div class="card_number_grid_right">
+                                                    <div class="controls">
+                                                        <label class="control-label">Address: </label>
+                                                        <input class="form-control" type="text" placeholder="Address">
+                                                    </div>
+                                                </div>
+                                                <div class="clear"> </div>
+                                            </div>
+                                        </div>
+                                        {% if messages %}
+                                        <ul>
+                                            {% for i in messages %}
+                                            <li>
+                                                {{i}}
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                        <button class="submit check_out" id="submit_button">Update Details</button>
+                                        
+                                    </div>
+                                </div>
+                            </form>
+            
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--//checkout-->
+        
+    </div>
+    <!-- //home -->
+    {% block footer %}{% include 'home/footer3.html' %}{% endblock footer %}
+    <!-- Common js -->
+    <script src="{% static 'home/js/jquery-2.2.3.min.js' %}"></script>
+    <script>
+    $(document).ready(function() {
+    //set initial state.
+    $("#submit_button").on("click",function(){
+        $("#profile-form").submit();
+    });
+    $("#issued_button").on("click",function(){
+        window.location.href="{% url 'issued' %}"
+    });
+    $("#uploaded_button").on("click",function(){
+        window.location.href="{% url 'uploaded' %}"
+    });
+    $("#balance_button").on("click",function(){
+        window.location.href="#"
+    });
+});
+    </script>
+
+
+    <!-- //dropdown nav -->
+    <!--search jQuery-->
+    <script src="{% static 'home/js/main.js' %}"></script>
+    <!--search jQuery-->
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="{% static 'home/js/scrolling-nav.js' %}"></script>
+    <!-- //fixed-scroll-nav-js -->
+    <!--//scripts-->
+    <!-- start-smooth-scrolling -->
+    <script src="{% static 'home/js/move-top.js' %}"></script>
+    <script src="{% static 'home/js/easing.js' %}"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            $(".clickin").on('click',function(){
+                window.location.href = "{% url 'book_upload' %}";
+
+            });
+            $(".add-balance").on('click',function(){
+                window.location.href = "{% url 'add-balance' %}";
+
+            });
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="{% static 'home/js/SmoothScroll.min.js' %}"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+ ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'home/js/bootstrap.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  {% load static  %}
+  <meta charset="UTF-8">
+  <title>Thank you</title>
+  
+  
+  
+      <link rel="stylesheet" href="{% static 'home/css/thanks_style.css' %}">
+
+  
+</head>
+
+<body>
+
+  <div class=content>
+  <div class="wrapper-1">
+    <div class="wrapper-2">
+      <h1>Thank you !</h1>
+      {% if balance %}
+      <p>The requested amount has been added to your wallet </p>
+      {% else %}
+      <p>We have placed your order and the book will soon be delivered to you! </p>
+      {% endif %}
+      
+      <a href="{% url 'index' %}"><button class="go-home">
+      Go Home
+      </button></a>
+    </div>
+</div>
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">
+  
+  
+
+</body>
+
+</html>

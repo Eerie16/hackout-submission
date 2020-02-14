@@ -1,0 +1,293 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% load static%}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Rentafolio | Upload Book </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- footer stylesheet -->
+	<link href="{% static 'home/css/footer3.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- Custom Theme files -->
+    <link href="{% static 'home/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- shop css -->
+    <link href="{% static 'home/css/shop.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- checkout css -->
+    <link href="{% static 'home/css/checkout.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link href="{% static 'home/css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="{% static 'home/css/font-awesome.css' %}" rel="stylesheet">
+    
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <!-- logo -->
+    <link href="//fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <!-- titles -->
+    <link href="//fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+    <!-- body -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- //online-fonts -->
+    <style type="text/css">
+    .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+</style>
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="home">
+        <!-- header -->
+        {% block navbar %}{% include 'home/header.html' %}{% endblock navbar%}
+        <!-- banner -->
+        <div class="banner-bg-inner">
+            <!-- banner-text -->
+            <div class="banner-text-inner">
+                <div class="container">
+                    <h2 class="title-inner">
+                        world of reading
+                    </h2>
+
+                </div>
+            </div>
+            <!-- //banner-text -->
+        </div>
+        <!-- //banner -->
+        
+        <!--checkout-->
+        <div class="innerf-pages section">
+            <div class="container">
+                <div class="privacy about">
+                    <h4 class="rad-txt">
+                        <span class="abtxt1">Book</span>
+                        <span class="abtext">Details</span>
+                    </h4>
+
+                    
+                    <div class="checkout-left">
+                        <div class="col-md-4 checkout-left-basket">
+                            <div class="dropdown">
+                                <button class="dropbtn">Select Book here</button>
+                                <div class="dropdown-content">
+                                    {% for book in books %}
+                                <a href="{{request.path}}?book={{book.id}}">{{book.title}}</a>
+                                {% endfor %}
+                                </div>
+                              </div>
+                              
+                                <form class="creditly-card-form shopf-sear-headinfo_form">
+                                    <div class="creditly-wrapper wrapper">
+                                        <div class="information-wrapper">
+                                            <div class="first-row form-group">
+                                                <div class="controls">
+                                                    <label class="control-label">Book Title: </label>
+                                                    <input class="billing-address-name form-control" type="text" name="title" placeholder="{{currbook.title}}" disabled>
+                                                </div>
+                                                <!-- <div class="controls">
+                                                        <label class="control-label">Book Title: </label>
+                                                        <input type="select">
+                                                    </div> -->
+                                                <div class="card_number_grids">
+                                                    <div class="card_number_grid_left">
+                                                        <div class="controls">
+                                                            <label class="control-label">Book Genere:</label>
+                                                            <input class="billing-address-name form-control" type="text" name="genere" placeholder="{{currbook.genre.name}}" disabled>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card_number_grid_right">
+                                                        <div class="controls">
+                                                            <label class="control-label">Publication: </label>
+                                                            <input class="billing-address-name form-control" type="text" name="publication" placeholder="{{currbook.publisher}}" disabled >
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"> </div>
+                                                </div>
+                                                <div class="controls">
+                                                    <label class="control-label">Author: </label>
+                                                    <input class="billing-address-name form-control" type="text" name="author" placeholder="{{currbook.author.first_name}} {{currbook.author.last_name}}" disabled>
+                                                </div>
+                                                <div class="controls">
+                                                    <label class="control-label">MRP: </label>
+                                                    <input class="billing-address-name form-control" type="number" name="mrp" placeholder="{{currbook.mrp}}" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+    
+                            </div>
+                        </div>
+                        <div class="col-md-8 address_form">
+                            <h4>Pick-Up Address</h4>
+                            <form action="{% url 'book_upload' %}" method="post" class="creditly-card-form shopf-sear-headinfo_form" id="myform">
+                                {% csrf_token %}
+                                <div class="creditly-wrapper wrapper">
+                                    <div class="information-wrapper">
+                                        <div class="first-row form-group">
+                                            <div class="controls">
+                                                <label class="control-label">Full name: </label>
+                                                <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
+                                            </div>
+                                            <div class="card_number_grids">
+                                                <div class="card_number_grid_left">
+                                                    <div class="controls">
+                                                        <label class="control-label">Mobile number:</label>
+                                                        <input class="form-control" type="text" placeholder="Mobile number">
+                                                    </div>
+                                                </div>
+                                                <div class="card_number_grid_right">
+                                                    <div class="controls">
+                                                        <label class="control-label">Landmark: </label>
+                                                        <input class="form-control" type="text" placeholder="Landmark">
+                                                    </div>
+                                                </div>
+                                                <div class="clear"> </div>
+                                            </div>
+                                            <div class="controls">
+                                                <label class="control-label">Town/City: </label>
+                                                <input class="form-control" type="text" placeholder="Town/City">
+                                            </div>
+                                            <div class="controls">
+                                                <label class="control-label">Address type: </label>
+                                                <select class="form-control option-fieldf">
+                                                    <option>Office</option>
+                                                    <option>Home</option>
+                                                    <option>Commercial</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="upload_id" name="upload_id">
+                                        <button class="submit check_out" id="submit_button">Confirm Pick-Up</button>
+                                        
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="clearfix"> </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--//checkout-->
+        
+    </div>
+    <!-- //home -->
+    {% block footer %}{% include 'home/footer3.html' %}{% endblock footer %}
+    <!-- Common js -->
+    <script src="{% static 'home/js/jquery-2.2.3.min.js' %}"></script>
+    <script>
+    $(document).ready(function() {
+    //set initial state.
+        {% if success %}
+        alert("{{success}}");
+        {% endif %}
+        {% if request.GET.book %}
+        $("#upload_id").val("{{request.GET.book}}");
+        // $("#myform").submit();
+        {% endif %}
+});
+    </script>
+    <!--// Common js -->
+ 
+
+    <!-- //dropdown nav -->
+    <!--search jQuery-->
+    <script src="{% static 'home/js/main.js' %}"></script>
+    <!--search jQuery-->
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="{% static 'home/js/scrolling-nav.js' %}"></script>
+    <!-- //fixed-scroll-nav-js -->
+    <!--//scripts-->
+    <!-- start-smooth-scrolling -->
+    <script src="{% static 'home/js/move-top.js' %}"></script>
+    <script src="{% static 'home/js/easing.js' %}"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="{% static 'home/js/SmoothScroll.min.js' %}"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+ ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'home/js/bootstrap.js' %}"></script>
+</body>
+
+</html>
